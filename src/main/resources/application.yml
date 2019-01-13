@@ -20,3 +20,22 @@ constants:
     uploadItemForumImagePath: /media/userfiles/po/itemforums/
     showItemForumImagePath: /po/itemforums/
     #itemForumImagePath: D://media/userfiles/po/itemforums/
+    #redis集群
+redis:
+    host: 127.0.0.1
+#    host: 192.168.1.111
+    port: 6379
+    timeout: 20000
+#    集群环境打开下面注释，单机不需要打开
+#    cluster:
+#      集群信息
+#      nodes: xxx.xxx.xxx.xxx:xxxx,xxx.xxx.xxx.xxx:xxxx,xxx.xxx.xxx.xxx:xxxx
+#      #默认值是5 一般当此值设置过大时，容易报：Too many Cluster redirections
+#      maxRedirects: 3
+    jedis:
+      pool:
+        max-active: 8
+        min-idle: 0
+        max-idle: 8
+        max-wait: -1
+    password: shen

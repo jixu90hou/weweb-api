@@ -27,7 +27,7 @@ import com.weweb.sys.service.SysUserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SstPoApplicationTests {
+public class ApiApplicationTests {
 	@Autowired
 	private WebApplicationContext wac;
 	@Autowired
