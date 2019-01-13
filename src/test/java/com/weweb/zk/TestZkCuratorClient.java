@@ -11,10 +11,18 @@ public class TestZkCuratorClient {
         CuratorFramework client = CuratorFrameworkFactory.newClient(connectionInfo, new ExponentialBackoffRetry(1000, 3));
         try {
             client.start();
-            String path = "/path";
-           // client.create().creatingParentsIfNeeded().forPath(path);
-            client.setData().forPath(path,"01".getBytes());
-            client.setData().forPath(path,"03".getBytes());
+            for (int i=100;i<1000;i++){
+                String path1 = "/p1/"+i;
+                client.setData().forPath(path1,String.valueOf(i+10).getBytes());
+
+            }
+      /*      String path1 = "/p1/9991";
+            String path2 = "/p1/9992";
+
+            // client.create().creatingParentsIfNeeded().forPath(path);
+            client.setData().forPath(path1,"03999".getBytes());
+            client.setData().forPath(path2,"03999".getBytes());*/
+
         } catch (Exception e) {
             e.printStackTrace();
         }
